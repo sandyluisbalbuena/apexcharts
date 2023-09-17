@@ -14,7 +14,7 @@ export default function Home() {
 		return fetchedCoinsMarkets;
 	}
 
-	const { data:tableData, isLoading } = useQuery({ queryKey: ['fetchingCoinsMarkets'], queryFn:fetchingCoinsMarkets});
+	const { data:tableData, isLoading } = useQuery({ queryKey: ['fetchingCoinsMarkets'], queryFn:fetchingCoinsMarkets, refetchInterval:45000});
 
 	// console.log(tableData);
 

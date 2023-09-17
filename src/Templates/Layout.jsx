@@ -9,17 +9,17 @@ export default function Layout() {
 const { theme } = useDataStore();
 
 	return (
-		<main data-theme={ theme } className='flex flex-col min-h-screen overflow-x-hidden dark'>
+		<main data-theme={ theme } className='flex flex-col min-h-screen overflow-x-hidden'>
 			<Navbar />
 			<div className='grid grid-cols-5 flex-1'>
-				<section className='col-span-1 bg-base-100 z-20'>
+				<section className='bg-base-100 z-20 fixed top-0 left-0 h-full'>
 					<div className=' mt-16'>
 						<div className='mx-2 my-20'>
 							<Accordion />
 						</div>
 					</div>
 				</section>
-				<section className='col-span-4 bg-neutral'>
+				<section className='col-start-2 col-span-4 bg-neutral'>
 					<div className='flex flex-col min-h-screen mt-16'>
 						<div className='m-10 flex-1'>
 							<Outlet />

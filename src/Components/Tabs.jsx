@@ -8,7 +8,7 @@ export default function Tabs() {
 
 	const tabs = [
 		["home","/"],
-		["show", "show"],
+		["contacts", "contacts"],
 		["about", "about"],
 	]
 

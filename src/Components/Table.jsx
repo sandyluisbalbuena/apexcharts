@@ -1,6 +1,7 @@
 import React from 'react'
 import Avatar from './Avatar';
 import SparklineChart from './Chart';
+import { Link } from 'react-router-dom';
 
 
 
@@ -44,12 +45,13 @@ export default function Table({ tableData }) {
 		return parts.join(".");
 	}
 
-	console.log
-
+	const handleClick = (id) => {
+		console.log(id);
+	}
 
 	return (
 		<div className="overflow-x-auto text-gray-400">
-			<table className="table">
+			<table className="table table-xs">
 				<thead>
 					<tr>
 						<th>#</th>
@@ -63,18 +65,22 @@ export default function Table({ tableData }) {
 						<th>Last 7 Days</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody className='h-40 overflow-auto'>
 					{tableData.map((data)=>(
-							<tr key={ data.id }>
-								<th>{ data.market_cap_rank }</th>
-								<td><div className='flex items-center'><Avatar imgSrc={ data.image } />&nbsp;&nbsp;{ data.name } <span className='uppercase text-gray-700'>&nbsp;&nbsp;{data.symbol}</span></div></td>
-								<td>$&nbsp;{ addCommasToPrice(data.current_price) }</td>
-								<td className={changeColor(data.price_change_percentage_1h_in_currency)}>{ data.price_change_percentage_1h_in_currency.toFixed(2) }</td>
-								<td className={changeColor(data.price_change_percentage_24h_in_currency)}>{ data.price_change_percentage_24h_in_currency.toFixed(2) }</td>
-								<td className={changeColor(data.price_change_percentage_7d_in_currency)}>{ data.price_change_percentage_7d_in_currency.toFixed(2) }</td>
-								<td>$&nbsp;{ addCommasToPrice(data.total_volume) }</td>
-								<td>$&nbsp;{ addCommasToPrice(data.market_cap) }</td>
-								<td><SparklineChart strokeColor={ strokeColor(data.price_change_percentage_7d_in_currency) } data={ data.sparkline_in_7d.price } /></td>
+							<tr key={ data.id } onClick={ ()=>handleClick(data.id) } className='hover:bg-neutral-focus hover:cursor-pointer'>
+									<th>{ data.market_cap_rank }</th>
+									<td>
+										<Link to={ data.id } className='hover:bg-neutral-focus hover:cursor-pointer'>
+											<div className='flex items-center'><Avatar imgSrc={ data.image } />&nbsp;&nbsp;{ data.name } <span className='uppercase text-gray-700'>&nbsp;&nbsp;{data.symbol}</span></div>
+										</Link>
+									</td>
+									<td>$&nbsp;{ addCommasToPrice(data.current_price) }</td>
+									<td className={changeColor(data.price_change_percentage_1h_in_currency)}>{ data.price_change_percentage_1h_in_currency.toFixed(2) }</td>
+									<td className={changeColor(data.price_change_percentage_24h_in_currency)}>{ data.price_change_percentage_24h_in_currency.toFixed(2) }</td>
+									<td className={changeColor(data.price_change_percentage_7d_in_currency)}>{ data.price_change_percentage_7d_in_currency.toFixed(2) }</td>
+									<td>$&nbsp;{ addCommasToPrice(data.total_volume) }</td>
+									<td>$&nbsp;{ addCommasToPrice(data.market_cap) }</td>
+									<td><SparklineChart strokeColor={ strokeColor(data.price_change_percentage_7d_in_currency) } data={ data.sparkline_in_7d.price } /></td>
 							</tr>
 						)
 					)}

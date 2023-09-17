@@ -60,7 +60,7 @@ return (
 			options={chartOptions}
 			series={chartSeries}
 			type="line"
-			width="100%"
+			width="80%"
 			height="100px"
 		/>
 	</div>

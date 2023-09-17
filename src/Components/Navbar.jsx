@@ -26,7 +26,7 @@ export default function Navbar() {
 						))}
 					</ul>
 				</div> */}
-				<ul className="menu menu-horizontal px-1">
+				<ul className="menu menu-horizontal px-1 mx-1">
 					<li>
 						<details>
 							<summary>
@@ -34,13 +34,13 @@ export default function Navbar() {
 							</summary>
 							<ul className="p-2 bg-base-100 mx-1 h-40 overflow-auto rounded-md">
 								{themes.map((theme)=>(
-									<li className='w-full' key={ theme } onClick={() => handleClick(theme)} ><a>{ theme }</a></li>
+									<li className='w-full uppercase' key={ theme } onClick={() => handleClick(theme)} ><a>{ theme }</a></li>
 								))}
 							</ul>
 						</details>
 					</li>
 				</ul>
-				<ul className="menu menu-horizontal px-1">
+				<ul className="menu menu-horizontal px-1 me-1">
 					<li>
 						<details>
 							<summary>

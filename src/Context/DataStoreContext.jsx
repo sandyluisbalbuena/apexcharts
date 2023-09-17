@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from 'react';
 const DataStoreContext = createContext();
 
 export function DataStoreProvider({ children }) {
-	const [ theme, setTheme ] = useState('dark');
+	const [ theme, setTheme ] = useState('forest');
 	const themes = [
 		"light",
 		"dark",
