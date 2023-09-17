@@ -7,7 +7,6 @@ import SparklineChart from './Chart';
 
 export default function Table({ tableData }) {
 
-
 	const changeColor = (value) => {
 		let className; // Replace with the Daisy UI class you want to target
 		const inputValue = parseFloat(value);
@@ -18,6 +17,21 @@ export default function Table({ tableData }) {
 			className = 'text-error';
 		} else {
 			className = 'text-white';
+		}
+
+		return className;
+	} 
+
+	const strokeColor = (value) => {
+		let className; // Replace with the Daisy UI class you want to target
+		const inputValue = parseFloat(value);
+
+		if (inputValue > 0) {
+			className = '#00cc00';
+		} else if (inputValue < 0) {
+			className = '#ff0000';
+		} else {
+			className = '#ffffff';
 		}
 
 		return className;
@@ -60,7 +74,7 @@ export default function Table({ tableData }) {
 								<td className={changeColor(data.price_change_percentage_7d_in_currency)}>{ data.price_change_percentage_7d_in_currency.toFixed(2) }</td>
 								<td>$&nbsp;{ addCommasToPrice(data.total_volume) }</td>
 								<td>$&nbsp;{ addCommasToPrice(data.market_cap) }</td>
-								<td><SparklineChart data={ data.sparkline_in_7d.price } /></td>
+								<td><SparklineChart strokeColor={ strokeColor(data.price_change_percentage_7d_in_currency) } data={ data.sparkline_in_7d.price } /></td>
 							</tr>
 						)
 					)}
