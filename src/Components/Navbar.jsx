@@ -32,7 +32,7 @@ export default function Navbar() {
 							<summary>
 								Theme
 							</summary>
-							<ul className="p-2 bg-base-100 shadow shadow-base-300 mx-2 h-40 overflow-auto rounded-md">
+							<ul className="p-2 bg-base-100 mx-1 h-40 overflow-auto rounded-md">
 								{themes.map((theme)=>(
 									<li className='w-full' key={ theme } onClick={() => handleClick(theme)} ><a>{ theme }</a></li>
 								))}
@@ -46,7 +46,7 @@ export default function Navbar() {
 							<summary>
 								User
 							</summary>
-							<ul className="p-2 bg-base-100 shadow shadow-base-300 mx-2">
+							<ul className="p-2 bg-base-100 mx-1 rounded-md">
 								<li><a>Profile</a></li>
 								<li><a>Logout</a></li>
 							</ul>
