@@ -27,7 +27,8 @@ const [chartOptions] = useState({
 		},
 	},
 	stroke: {
-		curve: "smooth",
+		curve: "straight",
+		// curve: "smooth",
 		width: 1,
 		colors: [strokeColor],
 	},

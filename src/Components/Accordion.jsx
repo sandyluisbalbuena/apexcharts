@@ -5,7 +5,7 @@ import SearchBox from './SearchBox'
 export default function Accordion() {
 	return (
 		<div className='flex flex-col gap-2'>
-			<div className="collapse collapse-arrow bg-slate-800">
+			<div className="collapse collapse-arrow bg-base-300">
 				<input type="radio" name="my-accordion-3"/> 
 				<div className="collapse-title text-sm font-medium">
 					Action1
@@ -16,7 +16,7 @@ export default function Accordion() {
 					</div>
 				</div>
 			</div>
-			<div className="collapse collapse-arrow bg-slate-800">
+			<div className="collapse collapse-arrow bg-base-300">
 				<input type="radio" name="my-accordion-3" /> 
 				<div className="collapse-title text-sm font-medium">
 					Action2
@@ -28,7 +28,7 @@ export default function Accordion() {
 					</div>
 				</div>
 			</div>
-			<div className="collapse collapse-arrow bg-slate-800">
+			<div className="collapse collapse-arrow bg-base-300">
 				<input type="radio" name="my-accordion-3" /> 
 				<div className="collapse-title text-sm font-medium">
 					Action3

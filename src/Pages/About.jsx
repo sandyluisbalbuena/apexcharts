@@ -5,7 +5,7 @@ export default function About() {
 	return (
 		<section className='w-full h-full'>
 			<div className='grid grid-cols-1'>
-				<Radial value={5} />
+				<Radial value={100} />
 			</div>
 		</section>
 	);

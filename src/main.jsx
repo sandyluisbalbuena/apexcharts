@@ -7,19 +7,22 @@ import Home from './Pages/Home.jsx'
 import Show from './Pages/Show'
 import About from './Pages/About'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { DataStoreProvider } from './Context/DataStoreContext'
 
 const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path='/' element={<Home />}/>
-          <Route path='/show' element={<Show />}/>
-          <Route path='/about' element={<About />}/>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <DataStoreProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path='/' element={<Home />}/>
+            <Route path='/show' element={<Show />}/>
+            <Route path='/about' element={<About />}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </DataStoreProvider>
   </QueryClientProvider>
 )
