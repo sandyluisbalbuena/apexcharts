@@ -21,7 +21,7 @@ const { theme } = useDataStore();
 				</section>
 				<section className='col-start-2 col-span-4 bg-neutral'>
 					<div className='flex flex-col min-h-screen mt-16'>
-						<div className='m-10 flex-1'>
+						<div className='my-5 mx-14 flex-1'>
 							<Outlet />
 						</div>
 						<Footer />

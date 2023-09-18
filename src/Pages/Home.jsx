@@ -3,6 +3,7 @@ import Radial from '../Components/Radial';
 import Table from '../Components/Table';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import Card from '../Components/Card';
 
 export default function Home() {
 
@@ -24,7 +25,9 @@ export default function Home() {
 			<div className='grid grid-cols-1'>
 				<Radial value={10} />
 				{!isLoading?(
-					<Table tableData={ tableData }/>
+					<Card title={'Cryptocurrency Prices by Market Cap'}>
+						<Table tableData={ tableData }/>
+					</Card>
 				):null}
 			</div>
 		</section>
