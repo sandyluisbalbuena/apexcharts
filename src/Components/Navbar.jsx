@@ -14,10 +14,9 @@ export default function Navbar() {
 	return (
 		<div className="navbar bg-base-300 fixed z-50">
 			<div className="flex-1">
-				<a className="btn btn-ghost normal-case text-xl">My Navbar</a>
+				<a className="btn btn-ghost normal-case text-xl">Crypto Tracker</a>
 			</div>
 			<div className="flex-none">
-				<Tabs />
 				{/* <div className="dropdown dropdown-end">
 					<label tabIndex={0} className="btn btn-ghost">Theme</label>
 					<ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow shadow-base-300 bg-base-100 rounded-box w-30 h-40 overflow-x-hidden overflow-y-auto">
@@ -40,7 +39,8 @@ export default function Navbar() {
 						</details>
 					</li>
 				</ul>
-				<ul className="menu menu-horizontal px-1 me-1">
+				<Tabs />
+				{/* <ul className="menu menu-horizontal px-1 me-1">
 					<li>
 						<details>
 							<summary>
@@ -52,7 +52,7 @@ export default function Navbar() {
 							</ul>
 						</details>
 					</li>
-				</ul>
+				</ul> */}
 				{/* <Button /> */}
 				{/* <ToggleDark/> */}
 			</div>

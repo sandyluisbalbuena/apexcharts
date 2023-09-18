@@ -70,15 +70,15 @@ export default function Table({ tableData }) {
 							<tr key={ data.id } onClick={ ()=>handleClick(data.id) } className='hover:bg-neutral-focus hover:cursor-pointer'>
 								<th>{ data.market_cap_rank }</th>
 								<td>
-									<div className='flex items-center'><Avatar imgSrc={ data.image } />&nbsp;&nbsp;{ data.name } <span className='uppercase text-gray-700'>&nbsp;&nbsp;{data.symbol}</span></div>
+									<div className='flex items-center w-fit'><Avatar imgSrc={ data.image } imgWidth={ 'w-5' } />&nbsp;&nbsp;{ data.name } <span className='uppercase text-gray-700'>&nbsp;&nbsp;{data.symbol}</span></div>
 								</td>
-								<td>$&nbsp;{ addCommasToPrice(data.current_price) }</td>
-								<td className={changeColor(data.price_change_percentage_1h_in_currency)}>{ data.price_change_percentage_1h_in_currency.toFixed(2) }</td>
-								<td className={changeColor(data.price_change_percentage_24h_in_currency)}>{ data.price_change_percentage_24h_in_currency.toFixed(2) }</td>
-								<td className={changeColor(data.price_change_percentage_7d_in_currency)}>{ data.price_change_percentage_7d_in_currency.toFixed(2) }</td>
-								<td>$&nbsp;{ addCommasToPrice(data.total_volume) }</td>
-								<td>$&nbsp;{ addCommasToPrice(data.market_cap) }</td>
-								<td><SparklineChart strokeColor={ strokeColor(data.price_change_percentage_7d_in_currency) } data={ data.sparkline_in_7d.price } /></td>
+								<td className='text-right'>$&nbsp;{addCommasToPrice(data.current_price) }</td>
+								<td className={'text-right '+changeColor(data.price_change_percentage_1h_in_currency)}>{ data.price_change_percentage_1h_in_currency.toFixed(1) }&nbsp;%</td>
+								<td className={'text-right '+changeColor(data.price_change_percentage_24h_in_currency)}>{ data.price_change_percentage_24h_in_currency.toFixed(1) }&nbsp;%</td>
+								<td className={'text-right '+changeColor(data.price_change_percentage_7d_in_currency)}>{ data.price_change_percentage_7d_in_currency.toFixed(1) }&nbsp;%</td>
+								<td className='text-right'>$&nbsp;{ addCommasToPrice(data.total_volume) }</td>
+								<td className='text-right'>$&nbsp;{ addCommasToPrice(data.market_cap) }</td>
+								<td className='text-right'><SparklineChart strokeColor={ strokeColor(data.price_change_percentage_7d_in_currency) } data={ data.sparkline_in_7d.price } /></td>
 							</tr>
 						)
 					)}

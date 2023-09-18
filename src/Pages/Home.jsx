@@ -25,7 +25,7 @@ export default function Home() {
 			<div className='grid grid-cols-1'>
 				<Radial value={10} />
 				{!isLoading?(
-					<Card title={'Cryptocurrency Prices by Market Cap'}>
+					<Card title={'TOP 10 Cryptocurrency Prices by Market Cap'}>
 						<Table tableData={ tableData }/>
 					</Card>
 				):null}

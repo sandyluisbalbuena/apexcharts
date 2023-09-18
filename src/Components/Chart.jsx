@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import ApexCharts from "react-apexcharts";
 
-const SparklineChart = ({ data,strokeColor }) => {
+const SparklineChart = ({ data, strokeColor, width }) => {
 const [chartOptions] = useState({
 	chart: {
 		id: "sparkline",
@@ -60,7 +60,7 @@ return (
 			options={chartOptions}
 			series={chartSeries}
 			type="line"
-			width="80%"
+			width={width?width:'80%'}
 			height="100px"
 		/>
 	</div>

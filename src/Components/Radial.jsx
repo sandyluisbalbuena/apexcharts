@@ -25,7 +25,7 @@ const incrementPerStep = 100 / totalSteps;
 	}, [incrementPerStep, totalSteps]);
 
 	return (
-		<div className={`fixed inset-0 z-10 ${counter === 0 ? 'hidden' : 'block'}`}>
+		<div className={`fixed inset-0 z-20 ${counter === 0 ? 'hidden' : 'block'}`}>
 			<div className="h-screen flex items-center justify-center bg-neutral bg-opacity-50 backdrop-blur-sm">
 				<div className="glow radial-progress text-white" style={{ "--value": counter.toFixed(2), "--size": "6rem", "--thickness": "5px" }}>
 					{counter.toFixed(2)}%

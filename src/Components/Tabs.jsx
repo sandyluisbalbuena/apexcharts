@@ -8,8 +8,8 @@ export default function Tabs() {
 
 	const tabs = [
 		["home","/"],
-		["contacts", "contacts"],
 		["about", "about"],
+		["contacts", "contacts"],
 	]
 
 	const handleClick = (tabName) => {
