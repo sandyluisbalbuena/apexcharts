@@ -12,7 +12,7 @@ export default function Navbar() {
 	}
 
 	return (
-		<div className="navbar bg-base-300 fixed z-50">
+		<div className="navbar bg-base-300 fixed z-50 px-5">
 			<div className="flex-1">
 				<a className="btn btn-ghost normal-case text-xl">Crypto Tracker</a>
 			</div>
@@ -25,7 +25,8 @@ export default function Navbar() {
 						))}
 					</ul>
 				</div> */}
-				<ul className="menu menu-horizontal px-1 mx-1">
+				<Tabs />
+				<ul className="menu menu-horizontal px-7">
 					<li>
 						<details>
 							<summary>
@@ -39,7 +40,6 @@ export default function Navbar() {
 						</details>
 					</li>
 				</ul>
-				<Tabs />
 				{/* <ul className="menu menu-horizontal px-1 me-1">
 					<li>
 						<details>
